@@ -9,12 +9,12 @@ public class Lesson2 {
 
     static String[][] stringArray = {
         {"1", "5", "45", "124"},
-        {"3", "34", "156", "8"},
+        {"3", "34", "TT", "8"},
         {"45", "94", "992", "3452"},
-        {"24", "9", "233", "43"}
+        {"24", "9", "DD", "43"}
     };
 
-    private static void foldAllValuesInArray(String[][] stringArr) throws MyArraySizeException, MyArrayDataException {
+    private static void foldAllValuesInArray(String[][] stringArr) throws MyArraySizeException {
 
         int arrValueSum = 0;
 
@@ -27,8 +27,10 @@ public class Lesson2 {
 
                 try {
                     Integer.parseInt(stringArr[i][j].trim());
-                } catch (NumberFormatException nfe) {
-                    throw new MyArrayDataException("Ошибка приведения типов String to Integer в ячейке: " + i + "-" + j);
+                } catch (NumberFormatException npe) {
+                    System.out.println("Ошибка приведения типов String to Integer в ячейке: " + i + "-" + j);
+                    npe.printStackTrace();
+                    continue;
                 }
 
                 arrValueSum += Integer.parseInt(stringArr[i][j].trim());
