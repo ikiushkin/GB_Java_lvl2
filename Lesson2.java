@@ -8,7 +8,7 @@ public class Lesson2 {
     }
 
     static String[][] stringArray = {
-        {"1", "5", "45", "124", "124"},
+        {"1", "5", "45", "124"},
         {"3", "34", "TT", "8"},
         {"45", "94", "992", "3452", "343"},
         {"24", "9", "DD", "43"},
@@ -21,16 +21,10 @@ public class Lesson2 {
 
         for (int i = 0; i < stringArr.length; i++) {
 
-            if (i > 3) {
-                System.out.println("Сумма значений массива равна: " + arrValueSum);
-                throw new MyArraySizeException("Размер массива выходит за пределы допустимых значений по вертикали (4)");
-            }
-
             for (int j = 0; j < stringArr[i].length; j++) {
 
-                if (j > 3) {
-                    System.err.println("Выход за пределы допустимого значения длины массива (4) в строке " + (i+1));
-                    continue;
+                if (stringArr.length != 4) {
+                    throw new MyArraySizeException("Размер массива выходит за пределы допустимых значений (4)");
                 }
 
                 try {
