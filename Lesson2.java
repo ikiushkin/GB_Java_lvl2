@@ -23,7 +23,7 @@ public class Lesson2 {
 
             for (int j = 0; j < stringArr[i].length; j++) {
 
-                if (stringArr.length != 4) {
+                if (stringArr[i].length != 4) {
                     throw new MyArraySizeException("Размер массива не соответствует допустимому значению 4 на 4");
                 }
 
