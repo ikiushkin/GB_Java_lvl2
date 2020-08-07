@@ -8,7 +8,7 @@ public class TelephoneDirectory {
 
     public static void add(String name, String phoneNumber) {
         if (name != null && name.trim().length() != 0) {
-            if (checkName(name)) {
+            if (isNameInDirectory(name)) {
                 for (HashMap.Entry<String, ArrayList<String>> o : telephoneDirectory.entrySet()) {
                     if (name.equals(o.getKey())) {
                         o.getValue().add(phoneNumber);
@@ -30,7 +30,7 @@ public class TelephoneDirectory {
         }
     }
 
-    static boolean checkName (String str) {
+    static boolean isNameInDirectory (String str) {
         for (Map.Entry<String, ArrayList<String>> str1 : telephoneDirectory.entrySet()) {
             if (str.equals(str1.getKey())) {
                 return true;
