@@ -1,5 +1,3 @@
-package hw;
-
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -28,6 +26,7 @@ public class Lesson6_Server {
                         e.printStackTrace();
                     }
                     if (str.equalsIgnoreCase("end")) {
+                        System.out.println("Клиент отключился");
                         break;
                     }
                     System.out.println(str);
@@ -42,7 +41,7 @@ public class Lesson6_Server {
                     try {
                         String s = scanner.nextLine();
                         if (s.equalsIgnoreCase("end")) {
-                            break;
+                            System.exit(0);
                         }
                         dos.writeUTF("Сервер : " + s);
                     } catch (IOException e) {
