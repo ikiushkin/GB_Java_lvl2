@@ -7,13 +7,14 @@ import java.util.List;
 
 public class AuthServiceImpl implements AuthService {
 
-    private List<UserEntity> usersList;
+    public List<UserEntity> usersList;
 
     public AuthServiceImpl() {
         this.usersList = new LinkedList<>();
         this.usersList.add(new UserEntity("login1", "pass1", "nick1"));
         this.usersList.add(new UserEntity("login2", "pass2", "nick2"));
         this.usersList.add(new UserEntity("login3", "pass3", "nick3"));
+        this.usersList.add(new UserEntity("login3", "pass4", "nick4"));
     }
 
     @Override
@@ -21,7 +22,6 @@ public class AuthServiceImpl implements AuthService {
         System.out.println("Сервис аутентификации запущен");
     }
 
-    // Поиск ника по логину и паролю
     @Override
     public String getNick(String login, String password) {
         for (UserEntity u : usersList) {
@@ -40,8 +40,7 @@ public class AuthServiceImpl implements AuthService {
 
     }
 
-    // Класс создания клиента
-    private class UserEntity {
+    public class UserEntity {
         private String login;
         private String password;
         private String nick;
@@ -50,6 +49,10 @@ public class AuthServiceImpl implements AuthService {
             this.login = login;
             this.password = password;
             this.nick = nick;
+        }
+
+        public String getNick() {
+            return nick;
         }
     }
 }

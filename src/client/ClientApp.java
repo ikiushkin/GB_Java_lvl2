@@ -1,10 +1,10 @@
 package client;
 
-import client.service.ClientService;
+import client.clientchatwindow.Window;
 
 public class ClientApp {
 
     public static void main(String[] args) {
-        new ClientService();
+        Window.main(args);
     }
 }
