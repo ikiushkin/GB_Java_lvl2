@@ -14,6 +14,4 @@ public interface Server {
     void unsubscribe(ClientHandler client);
 
     AuthService getAuthService();
-
-    void sendPrivateMsg(ClientHandler clientHandler, String nick, String clientStr);
 }
